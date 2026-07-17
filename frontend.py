@@ -1,6 +1,9 @@
 import os
 import requests
 import streamlit as st
+from dotenv import load_dotenv
+
+load_dotenv()
 
 FASTAPI_URL = os.getenv("FASTAPI_URL", "http://localhost:8000/analyze")
 
@@ -276,7 +279,10 @@ else:
     left, right = st.columns([1, 1.4], gap="large")
 
     with left:
-        if st.session_state.get("preview") is not None and st.session_state.preview.type == "image/png":
+        annotated_url = result.get("annotated_image_url")
+        if annotated_url:
+            st.image(annotated_url, use_container_width=True, caption="Annotated result")
+        elif st.session_state.get("preview") is not None and st.session_state.preview.type == "image/png":
             st.image(st.session_state.preview, use_container_width=True)
         else:
             st.markdown(
