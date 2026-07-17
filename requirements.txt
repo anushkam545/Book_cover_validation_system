@@ -1,15 +1,14 @@
-fastapi==0.115.0
-uvicorn==0.30.6
+fastapi==0.139.0
+uvicorn==0.35.0
+python-multipart==0.0.20
 
-opencv-python==4.10.0.84
+opencv-python-headless==4.10.0.84
 easyocr==1.7.2
-
 numpy==1.26.4
 
-python-dotenv==1.0.1
-requests==2.32.3
+python-dotenv==1.2.2
+requests==2.32.5
+PyMuPDF==1.26.3
+Pillow==11.3.0
 
-PyMuPDF==1.24.10
-Pillow==10.4.0
-
-streamlit==1.42.0
+streamlit==1.47.1
